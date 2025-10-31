@@ -27,7 +27,7 @@ Route::get('/allergeen/{id}/edit', [AllergeenController::class, 'edit'])->name('
 
 Route::put('/allergeen/{id}', [AllergeenController::class, 'update'])->name('allergeen.update');
 
-Route::get('/products', [AllergeenController::class, 'index'])->name('product.index');
+Route::get('/products', [ProductController::class, 'index'])->name('product.index');
 
 Route::get('/product/{id}/allergenenInfo', [AllergeenController::class, 'index'])->name('product.allergenenInfo');
 
