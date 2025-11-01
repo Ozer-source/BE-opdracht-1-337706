@@ -15,6 +15,13 @@ class JaminAllergeenController extends Controller
     }
     public function index($id)
     {
+        $data = $this->AllergeenModel->getAllergeenData($id);
+
+        return view('product.allergenenInfo', [
+            'title' => 'Overzicht Allergenen',
+            'product' => $data['product'],
+            'allergenen' => $data['allergenen']
+        ]);
     }
 
 
