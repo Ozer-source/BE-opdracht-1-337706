@@ -8,7 +8,7 @@ use App\Http\Controllers\AllergeenController;
 use App\Http\Controllers\ProductController;
 use App\Models\AllergeenModel;
 
-// use App\Http\Controllers\LeverantController;
+use App\Http\Controllers\LeverantController;
 // use App\Http\Controllers\JaminAllergeenController;
 
 Route::get('/', function () {
@@ -32,7 +32,7 @@ Route::get('/products', [ProductController::class, 'index'])->name('product.inde
 Route::get('/product/{id}/allergenenInfo', [AllergeenController::class, 'index'])->name('product.allergenenInfo');
 
 
-Route::get('/product/{id}/leverantieInfo', [AllergeenController::class, 'index'])->name('product.leverantieInfo');
+Route::get('/product/{id}/leverantieInfo', [LeverantController::class, 'index'])->name('product.leverantieInfo');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
