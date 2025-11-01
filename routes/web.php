@@ -9,7 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Models\AllergeenModel;
 
 use App\Http\Controllers\LeverantController;
-// use App\Http\Controllers\JaminAllergeenController;
+use App\Http\Controllers\JaminAllergeenController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,7 +29,7 @@ Route::put('/allergeen/{id}', [AllergeenController::class, 'update'])->name('all
 
 Route::get('/products', [ProductController::class, 'index'])->name('product.index');
 
-Route::get('/product/{id}/allergenenInfo', [AllergeenController::class, 'index'])->name('product.allergenenInfo');
+Route::get('/product/{id}/allergenenInfo', [JaminAllergeenController::class, 'index'])->name('product.allergenenInfo');
 
 
 Route::get('/product/{id}/leverantieInfo', [LeverantController::class, 'index'])->name('product.leverantieInfo');
