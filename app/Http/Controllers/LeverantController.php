@@ -15,6 +15,15 @@ class LeverantController extends Controller
     }
     public function index($id)
     {
+        // gebruik het id uit de URL
+        $leverancier = $this->leverantModel->sp_GetLeverantieInfo($id);
+        $leverant = $this->leverantModel->sp_GetLeverancierInfo($id);
+
+        return view('product.leverantieInfo', [
+            'title' => 'Leverings Informatie',
+            'Leverancier' => $leverancier,
+            'leverant' => $leverant
+        ]);
     }
 
 
